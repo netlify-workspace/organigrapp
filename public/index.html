@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organigrama</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="tree"></div>
+
+  <script src="./orgchart.js"></script>
+  <script src="./template.js"></script>
+  <script src="./config.js"></script>
+  <script>
+    const chart = new OrgChart(document.getElementById("tree"), configBase);
+    fetch(URL_DATA)
+      .then(r => r.json())
+      .then(tree => chart.load(tree.data))
+      .catch(console.log)
+  </script> 
+</body>
+</html>
