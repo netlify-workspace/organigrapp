@@ -6,10 +6,10 @@ const jwt = require('jsonwebtoken')
 const PORT = process.env.PORT
 const app = express()
 
-app.use(express.static('./public'))
+app.use(express.static(__dirname + '/public'))
 app.use(cookieParser())
 app.use(express.urlencoded())
-app.use('/api', jsonServer.router('data.json'))
+app.use('/api', jsonServer.router(__dirname + '/data.json'))
 
 app.get('/signin', (req, res) => res.sendFile(__dirname + '/public/login.html'))
 app.get('/edit', requireLogin, (req, res) => res.sendFile(__dirname + '/public/editable.html'))
