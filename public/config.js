@@ -1,4 +1,4 @@
-const URL_DATA = 'http://localhost:3000/api/tree';
+const URL_DATA = 'https://organigrapp.onrender.com/api/tree';
 
 const configBase = {
   template: 'tesacom',
