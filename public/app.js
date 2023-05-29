@@ -13,7 +13,7 @@ const configEdit = { ...configBase,
     elements: [
         { type: 'textbox', label: 'Nombre y Apellido', binding: 'name' },
         { type: 'textbox', label: 'Posición', binding: 'title' },
-        { type: 'textbox', label: 'Foto', binding: 'img' },
+        { type: 'textbox', label: 'Foto', binding: 'img', value: 'https://organigrapp.onrender.com/avatar.jpg' },
         { type: 'textbox', label: 'Email', binding: 'email' },
         { type: 'select', options: [
             {value: '', text: 'Global'},
