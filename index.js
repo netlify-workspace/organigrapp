@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken')
 const PORT = process.env.PORT
 const app = express()
 
-app.use(express.static(__dirname + '/public'))
+//app.use(express.static(__dirname + '/public'))
 app.use(cookieParser())
 app.use(express.urlencoded())
 // app.use('/api', jsonServer.router(__dirname + '/data.json'))
