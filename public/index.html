@@ -8,18 +8,7 @@
   <title>Organigrama</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div id="tree"></div>
-
-  <script src="./orgchart.js"></script>
-  <script src="./template.js"></script>
-  <script src="./config.js"></script>
-  <script>
-    const chart = new OrgChart(document.getElementById("tree"), configBase);
-    fetch(URL_DATA)
-      .then(r => r.json())
-      .then(tree => chart.load(tree.data))
-      .catch(console.log)
-  </script> 
-</body>
+  <body>
+    <a href="https://up.tesacom.net/org">Nueva url</a>
+  </body>
 </html>
