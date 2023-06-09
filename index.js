@@ -9,13 +9,16 @@ const app = express()
 app.use(express.static(__dirname + '/public'))
 app.use(cookieParser())
 app.use(express.urlencoded())
-app.use('/api', jsonServer.router(__dirname + '/data.json'))
+// app.use('/api', jsonServer.router(__dirname + '/data.json'))
 
-app.get('/signin', (req, res) => res.sendFile(__dirname + '/public/login.html'))
-app.get('/edit', requireLogin, (req, res) => res.sendFile(__dirname + '/public/editable.html'))
+app.get('/', (req, res) => res.sendFile(__dirname + '/public/stop.html'))
+app.get('/signin', (req, res) => res.sendFile(__dirname + '/public/stop.html'))
+app.get('/edit', (req, res) => res.sendFile(__dirname + '/public/stop.html'))
 app.get('/logout', logout)
 app.post('/login', (req, res) => {
-  let { accesskey } = req.body
+  
+  res.sendFile(__dirname + '/public/stop.html')
+  /*let { accesskey } = req.body
 
   if (accesskey !== process.env.SECRET_KEY) {
     return res.redirect('/signin')
@@ -37,7 +40,7 @@ app.post('/login', (req, res) => {
 
   res.status(200)
     .cookie('accessjwt', token, { maxAge: 900000, httpOnly: true })
-    .redirect('/edit')
+    .redirect('/edit')*/
 })
 
 app.listen(PORT, () => console.log(`Running on port:${PORT}` ))
