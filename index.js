@@ -6,16 +6,16 @@ const jwt = require('jsonwebtoken')
 const PORT = process.env.PORT
 const app = express()
 
-//app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'))
 app.use(cookieParser())
 app.use(express.urlencoded())
 // app.use('/api', jsonServer.router(__dirname + '/data.json'))
 
-app.get('/', (req, res) => res.sendFile(__dirname + '/public/stop.html'))
-app.get('/signin', (req, res) => res.sendFile(__dirname + '/public/stop.html'))
-app.get('/edit', (req, res) => res.sendFile(__dirname + '/public/stop.html'))
-app.get('/logout', (req, res) => res.sendFile(__dirname + '/public/stop.html'))
-app.post('/login', (req, res) => res.sendFile(__dirname + '/public/stop.html'))
+app.get('/', (req, res) => res.sendFile(__dirname + '/public/index.html'))
+app.get('/signin', (req, res) => res.sendFile(__dirname + '/public/index.html'))
+app.get('/edit', (req, res) => res.sendFile(__dirname + '/public/index.html'))
+app.get('/logout', (req, res) => res.sendFile(__dirname + '/public/index.html'))
+app.post('/login', (req, res) => res.sendFile(__dirname + '/public/index.html'))
  
  
   /*let { accesskey } = req.body
