@@ -14,10 +14,10 @@ app.use(express.urlencoded())
 app.get('/', (req, res) => res.sendFile(__dirname + '/public/stop.html'))
 app.get('/signin', (req, res) => res.sendFile(__dirname + '/public/stop.html'))
 app.get('/edit', (req, res) => res.sendFile(__dirname + '/public/stop.html'))
-app.get('/logout', logout)
-app.post('/login', (req, res) => {
-  
-  res.sendFile(__dirname + '/public/stop.html')
+app.get('/logout', (req, res) => res.sendFile(__dirname + '/public/stop.html'))
+app.post('/login', (req, res) => res.sendFile(__dirname + '/public/stop.html'))
+ 
+ 
   /*let { accesskey } = req.body
 
   if (accesskey !== process.env.SECRET_KEY) {
@@ -40,8 +40,8 @@ app.post('/login', (req, res) => {
 
   res.status(200)
     .cookie('accessjwt', token, { maxAge: 900000, httpOnly: true })
-    .redirect('/edit')*/
-})
+    .redirect('/edit')
+})*/
 
 app.listen(PORT, () => console.log(`Running on port:${PORT}` ))
 
